@@ -19,13 +19,24 @@
                         <div class="search-box not-click">
                             <input type="text" class="not-click form-control" placeholder="Search" value=""
                                 name="search">
-                            <button class="search-button" type="submit"> <i class="fa fa-search not-click"></i></button>
+                            <button class="search-button" type="submit"> <i
+                                    class="fa fa-search not-click"></i></button>
                         </div>
                     </div>
                 </li>
             </ul>
             <!-- top bar right -->
             <ul class="nav navbar-nav ml-auto">
+                <ul>
+                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li>
+                            <a rel="alternate" hreflang="{{ $localeCode }}"
+                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                {{ $properties['native'] }}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
                 <li class="nav-item fullscreen">
                     <a id="btnFullscreen" href="#" class="nav-link"><i class="ti-fullscreen"></i></a>
                 </li>
@@ -49,7 +60,8 @@
                                 class="float-right text-muted time">7 hrs</small> </a>
                         <a href="#" class="dropdown-item">Database report<small class="float-right text-muted time">1
                                 days</small> </a>
-                        <a href="#" class="dropdown-item">Order confirmation<small class="float-right text-muted time">2
+                        <a href="#" class="dropdown-item">Order confirmation<small
+                                class="float-right text-muted time">2
                                 days</small> </a>
                     </div>
                 </li>
