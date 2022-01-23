@@ -7,7 +7,8 @@
                     <!-- menu item Dashboard-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard">
-                            <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">Dashboard</span>
+                            <div class="pull-left"><i class="ti-home"></i><span
+                                    class="right-nav-text">{{ trans('main_trans.Dashboard') }}</span>
                             </div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -26,7 +27,7 @@
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#elements">
                             <div class="pull-left"><i class="ti-palette"></i><span
-                                    class="right-nav-text">Elements</span></div>
+                                    class="right-nav-text">المراحل الدراسيه</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -119,7 +120,8 @@
                     <!-- menu item Form-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Form">
-                            <div class="pull-left"><i class="ti-files"></i><span class="right-nav-text">Form &
+                            <div class="pull-left"><i class="ti-files"></i><span class="right-nav-text">Form
+                                    &
                                     Editor</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -138,7 +140,8 @@
                     <!-- menu item table -->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#table">
-                            <div class="pull-left"><i class="ti-layout-tab-window"></i><span class="right-nav-text">data
+                            <div class="pull-left"><i class="ti-layout-tab-window"></i><span
+                                    class="right-nav-text">data
                                     table</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -153,7 +156,8 @@
                     <!-- menu item Custom pages-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#custom-page">
-                            <div class="pull-left"><i class="ti-file"></i><span class="right-nav-text">Custom
+                            <div class="pull-left"><i class="ti-file"></i><span
+                                    class="right-nav-text">Custom
                                     pages</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -193,7 +197,8 @@
                     </li>
                     <!-- menu item timeline-->
                     <li>
-                        <a href="timeline.html"><i class="ti-panel"></i><span class="right-nav-text">timeline</span>
+                        <a href="timeline.html"><i class="ti-panel"></i><span
+                                class="right-nav-text">timeline</span>
                         </a>
                     </li>
                     <!-- menu item Multi level-->
@@ -219,8 +224,9 @@
                                         <ul id="login" class="collapse">
                                             <li>
                                                 <a href="javascript:void(0);" data-toggle="collapse"
-                                                    data-target="#invoice">level item 1.1.1<div class="pull-right"><i
-                                                            class="ti-plus"></i></div>
+                                                    data-target="#invoice">level item 1.1.1<div class="pull-right">
+                                                        <i class="ti-plus"></i>
+                                                    </div>
                                                     <div class="clearfix"></div>
                                                 </a>
                                                 <ul id="invoice" class="collapse">
