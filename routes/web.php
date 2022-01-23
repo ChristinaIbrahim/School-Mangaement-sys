@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\EnsureTokenIsValid;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,16 +16,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::group(['middleware' =>['EnsureTokenIsValid']],function(){
+//         Route::get('/', function () {
+//         return view('auth.login');
+//         });
+// });
+Route::middleware([EnsureTokenIsValid::class])->group(function () {
+    Route::get('/', function () {
+       return view('auth.login');
+
+    });
+
+Auth::routes();
+
 
 Route::group(
 [
 'prefix' => LaravelLocalization::setLocale(),
-'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth' ]
 ], function(){ 
-    Route::get('/', function () {
-    return view('dashboard');
-    });
+    
+    Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
+    });
 
 });
 
@@ -33,5 +48,3 @@ Route::group(
 // Route::get('/dashboard', function () {
 // return view('dashboard');
 // });
-
-// Route::get('/dashboard', 'HomeController@index')->name('dashboard');
