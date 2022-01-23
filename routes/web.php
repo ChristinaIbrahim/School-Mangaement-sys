@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('auth.login');
 });
+Auth::routes();
+
+// Route::get('/dashboard', function () {
+// return view('dashboard');
+// });
+
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
