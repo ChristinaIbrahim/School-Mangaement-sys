@@ -16,11 +16,7 @@ use App\Http\Middleware\EnsureTokenIsValid;
 |
 */
 
-// Route::group(['middleware' =>['EnsureTokenIsValid']],function(){
-//         Route::get('/', function () {
-//         return view('auth.login');
-//         });
-// });
+
 Route::middleware([EnsureTokenIsValid::class])->group(function () {
     Route::get('/', function () {
        return view('auth.login');
@@ -32,19 +28,12 @@ Auth::routes();
 
 Route::group(
 [
-'prefix' => LaravelLocalization::setLocale(),
-'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth' ]
-], function(){ 
-    
-    Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth' ]
+    ], function(){ 
+        
+        Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
-    });
+        });
 
 });
-
-
-// Auth::routes();
-
-// Route::get('/dashboard', function () {
-// return view('dashboard');
-// });

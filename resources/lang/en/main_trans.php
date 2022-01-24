@@ -3,5 +3,7 @@
 return [
 
 
-    'Dashboard'=>'Dashboard'
+    'Dashboard'=>'Dashboard',
+    'Accordions'=>'Accordions',
+    'elements' => 'elements'
 ];
