@@ -39,6 +39,8 @@ Route::group(
 
 
         Route::get('/grades', [GradeController::class, 'index'])->name('grades');
+        Route::post('/grades/store', [GradeController::class, 'store'])->name('grades.store');
+
 
        
         // Route::namespace(['namespace' => 'Grades'],function(){
